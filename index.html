@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<title>Musique - Musique.fr</title>
+<style>html, body { margin: 0 !important; padding: 0 !important; max-width: 100%; overflow-x: hidden; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      text-align: center;
+      padding-top: 100px;}.container {
+      background: white;
+      padding: 40px;
+      margin: auto;
+      display: inline-block;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);}h1 {
+      font-size: 2.5em;}p {
+      font-size: 1.2em;}footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid #ccc;}footer a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+      cursor: pointer;}.modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 70vw;
+      height: 40vh;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid #888;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      padding: 20px;
+      overflow: auto;}.overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;}.close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #888;}img {
+  max-width: 100%;
+  height: auto;}.container {
+  width: 95%;
+  max-width: 800px;}h2 {
+    font-size: 1.5em;}.container {
+    padding: 20px;}}}}}}html, body {
+  max-width: 100%;
+  overflow-x: hidden;}.container, .content, .section, .brz, .brz-section {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;}}
+body {
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+}
+</style>
+<meta content="Musique - Toute la Musique dans le monde." name="description"/><meta content="musique" name="keywords"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
+<body>
+<div class="container">
+<a href="https://www.musique.fr" title="musique"><img height="150" src="musique.fr_logo_v08.jpg" border="0" style="height: 221px; width: auto;" title="musique"/></a>
+<h1 style="font-size: clamp(1.4em, 7vw, 3em); font-weight: bold; text-align: center; max-width: 90vw; margin: auto;">
+<br/><span style="color: #2D8E23;">Musique.fr</span>
+</a>
+</h1>
+<h2>
+
+<a href="https://www.lyad.fr" title="chat"><img border="0" src="Lyad-Rencontre-Couple-Velo.jpg" title="rencontre"/></a><br/><br/><br/>
+<h1>🚧 Site en r&eacute;novation</h1><br/>
+<p>Tout sur la <b>musique</b> avec Musique.fr<br/>
+En cours de mise &agrave; jour. <br/> Revenez bientot !</p><br/><br/>
+<h1><a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}">Contactez-nous</a></h1><br/><br/><br/>
+</div>
+<footer>
+<a onclick="openModal('legal')">Mentions l&eacute;gales</a>
+<a onclick="openModal('contact')">Contact</a>
+</footer>
+<div class="overlay" id="overlay" onclick="closeModal()"></div>
+<div class="modal" id="modal-legal">
+<span class="close-btn" onclick="closeModal()"><b>X</b></span>
+<h2>Mentions légales</h2><br/>
+<p>Editeur du site :  INTERNET - 34 av la bruyere - 38100 Grenoble<br/><br/>
+  Ce site ne dépose pas de cookies autre que essentiel au fonctionnement.<br/><br/>
+<a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}">Contactez-nous</a>
+</p>
+</div>
+<div class="modal" id="modal-contact">
+<span class="close-btn" onclick="closeModal()"><b>X</b></span>
+<h2>Contact</h2><br/>
+  Une question nous concernant ?<br/>
+  Nous restons &agrave; votre disposition !<br/><br/>
+  <p><a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}">Contactez-nous</a></p>
+</div><br/><br/><br/><br/><br/><br/>
+<script>
+  function openModal(type) {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('modal-' + type).style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.style.display = 'none';
+    });
+  }
+</script>
+</body>
+</html>

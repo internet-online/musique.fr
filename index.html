@@ -1,126 +1,232 @@
+
 <!DOCTYPE html>
 
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<title>Musique - Musique.fr</title>
-<style>html, body { margin: 0 !important; padding: 0 !important; max-width: 100%; overflow-x: hidden; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-      text-align: center;
-      padding-top: 100px;}.container {
-      background: white;
-      padding: 40px;
-      margin: auto;
-      display: inline-block;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);}h1 {
-      font-size: 2.5em;}p {
-      font-size: 1.2em;}footer {
-      background-color: #f0f0f0;
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      border-top: 1px solid #ccc;}footer a {
-      margin: 0 20px;
-      text-decoration: none;
-      color: #0077cc;
-      font-weight: bold;
-      cursor: pointer;}.modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 70vw;
-      height: 40vh;
-      transform: translate(-50%, -50%);
-      background: white;
-      border: 2px solid #888;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      z-index: 1000;
-      padding: 20px;
-      overflow: auto;}.overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;}.close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 18px;
-      cursor: pointer;
-      color: #888;}img {
-  max-width: 100%;
-  height: auto;}.container {
-  width: 95%;
-  max-width: 800px;}h2 {
-    font-size: 1.5em;}.container {
-    padding: 20px;}}}}}}html, body {
-  max-width: 100%;
-  overflow-x: hidden;}.container, .content, .section, .brz, .brz-section {
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;}}
-body {
-  margin-top: 10px !important;
-  padding-top: 0 !important;
+<title>Musique.fr</title>
+<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff;
+        }
+
+        .background-images {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 220px;
+            height: 330px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .background-images img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .background-images img.active {
+            opacity: 1;
+        }
+
+        .header {
+            position: relative;
+            background: #000;
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            padding-left: 250px; /* space for image */
+        }
+
+        .logo {
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 130px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+            margin-top: 95px; /* Ajout pour descendre la navigation */
+        }
+
+	.nav a { 
+	    color: #ABFF09;
+	    text-decoration: none;
+	    font-weight: bold;
+	}
+
+	.nav a .crochet {
+	    color: #ccc; /* gris clair */
+	}
+
+        .content {
+            display: flex;
+            margin: 20px;
+            margin-top: 40px;
+        }
+
+        .sidebar {
+            width: 200px;
+            padding-right: 20px;
+            z-index: 2;
+            margin-top: 125px; /* Ajout pour descendre la navigation */
+        }
+
+        .sidebar a {
+            display: block;
+            color: purple;
+            text-decoration: none;
+            margin: 5px 0;
+            color: black;
+        }
+        
+        .sidebar a:hover {
+ 	    color: #555;
+	}
+
+        .main {
+            flex-grow: 1;
+            background: white;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .background-images {
+                display: none;
+            }
+
+            .header {
+                padding-left: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content {
+                flex-direction: column;
+                margin: 10px;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 0;
+            }
+
+            .main {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+        
+            /* Corriger l'alignement vertical du texte dans le bouton */
+#wlyabut {
+  position: relative;
+  top: 10px; /* D�calage vers le bas */
 }
-</style>
-<meta content="Musique - Toute la Musique dans le monde." name="description"/><meta content="musique" name="keywords"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
+    </style>
+</head>
 <body>
-<div class="container">
-<a href="https://www.musique.fr" title="musique"><img height="150" src="musique.fr_logo_v08.jpg" border="0" style="height: 221px; width: auto;" title="musique"/></a>
-<h1 style="font-size: clamp(1.4em, 7vw, 3em); font-weight: bold; text-align: center; max-width: 90vw; margin: auto;">
-<br/><span style="color: #2D8E23;">Musique.fr</span>
-</a>
-</h1>
-<h2>
-
-<a href="https://www.lyad.fr" title="chat"><img border="0" src="Lyad-Rencontre-Couple-Velo.jpg" title="rencontre"/></a><br/><br/><br/>
-<h1>🚧 Site en r&eacute;novation</h1><br/>
-<p>Tout sur la <b>musique</b> avec Musique.fr<br/>
-En cours de mise &agrave; jour. <br/> Revenez bientot !</p><br/><br/>
-<h1><a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}">Contactez-nous</a></h1><br/><br/><br/>
+<div class="background-images">
+<img class="active" src="musique.fr_img-02.jpg"/>
+<img src="musique.fr_img-03.jpg"/>
+<img src="musique.fr_img-04.jpg"/>
+<img src="musique.fr_img-05.jpg"/>
+<img src="musique.fr_img-06.jpg"/>
 </div>
-<footer>
-<a onclick="openModal('legal')">Mentions l&eacute;gales</a>
-<a onclick="openModal('contact')">Contact</a>
-</footer>
-<div class="overlay" id="overlay" onclick="closeModal()"></div>
-<div class="modal" id="modal-legal">
-<span class="close-btn" onclick="closeModal()"><b>X</b></span>
-<h2>Mentions légales</h2><br/>
-<p>Editeur du site :  INTERNET - 34 av la bruyere - 38100 Grenoble<br/><br/>
-  Ce site ne dépose pas de cookies autre que essentiel au fonctionnement.<br/><br/>
-<a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}">Contactez-nous</a>
-</p>
+<div class="header">
+<div class="logo">
+<img alt="Logo musique.fr" src="logo-musique.fr_v5.jpg"/>
 </div>
-<div class="modal" id="modal-contact">
-<span class="close-btn" onclick="closeModal()"><b>X</b></span>
-<h2>Contact</h2><br/>
-  Une question nous concernant ?<br/>
-  Nous restons &agrave; votre disposition !<br/><br/>
-  <p><a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}">Contactez-nous</a></p>
-</div><br/><br/><br/><br/><br/><br/>
+<div class="nav">
+<a href="#"><span class="crochet">[</span> Fête de la musique <span class="crochet">]</span></a>
+<a href="#"><span class="crochet">[</span> Artistes <span class="crochet">]</span></a>
+<a href="https://www.lyad.fr" target="_blank" title="Chat"><span class="crochet">[</span> CHAT <span class="crochet">]</span></a>
+</div>
+</div>
+<div class="content">
+<div class="sidebar">
+<a href="#">Variété Française</a>
+<a href="#">Hip-Hop</a>
+<a href="#">Electro</a>
+<a href="#">Rock</a>
+<a href="#">Jazz</a>
+<a href="#">Blues</a>
+<a href="#">Reggae</a>
+<a href="#">Classique</a>
+<a href="#">Techno</a>
+<a href="#">Musiques du monde</a>
+</div>
+<div class="main" id="mainContent">
+<h2 id="sectionTitle">Fête de la musique à Paris</h2>
+<p>Contenu initial affichê ici...</p>
+</div>
+</div>
 <script>
-  function openModal(type) {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('modal-' + type).style.display = 'block';
-  }
+    const images = document.querySelectorAll('.background-images img');
+    let current = 0;
 
-  function closeModal() {
-    document.getElementById('overlay').style.display = 'none';
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.style.display = 'none';
-    });
+    setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }, 10000);
+    
+  function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none';
   }
 </script>
+<!-- POPUP Overlay -->
+<div class="footer">
+<a href="#" onclick="showPopup('mentions')" style="color: white;">Mentions l&eacute;gales</a> |
+    <a href="#" onclick="showPopup('contact')" style="color: white;">Contact</a>
+</div>
+<div id="popup" style="display:none; position:fixed; top:10%; left:15%; width:60%; height:30%; background:white; border:2px solid black; padding:20px; z-index:2000;">
+<div style="text-align:right;"><button onclick="hidePopup()">X</button></div>
+<div id="popupContent">Contenu du popup � remplacer...</div>
+</div>
+
+<script language="JavaScript" src="http://www.lyad.com/testrv/popdivzic.asp" type="text/javascript"></script><img border="0" height="1" src="http://www.lyad.com/tracking_id_15625A1O109377A1O50.gif" width="1"/>
+
+<div id="popupOverlay" onclick="hidePopup()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:998;"></div>
+
+<script>
+function showPopup(type) {
+    var overlay = document.getElementById('popupOverlay');
+    var popup = document.getElementById('popup');
+    var popupContent = document.getElementById('popupContent');
+    popupContent.innerHTML = type === 'mentions'
+        ? '<center><h2>Mentions l&eacute;gales</h2> <br> Editeur du site : INTERNET - 34 av la bruyere - 38100 Grenoble <br> Ce site ne d&eacute;pose pas de cookies autre que essentiel au fonctionnement. <br><br> <a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}"><b>Contactez-nous</b></a> </center>' : '<center><h2>Contact</h2> <br>Une question nous concernant ?<br>Nous restons &agrave; votre disposition !<br><br><a href="https://www.cognitoforms.com/Formcontact1/Contact?entry={%22Site%22:%22Musique.fr%22}"><b>Contactez-nous</b></a></center>';
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+}
+
+function hidePopup() {
+    var popup = document.getElementById('popup');
+    var overlay = document.getElementById('popupOverlay');
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+}
+</script>
 </body>
+
 </html>

@@ -192,7 +192,7 @@
 </div>
 <div class="nav">
 <a href="#" id="feteMusiqueLink"><span class="crochet">[</span> F&ecirc;te de la musique <span class="crochet">]</span></a>
-<a href="#"><span class="crochet">[</span> Artistes <span class="crochet">]</span></a>
+<a href="#" id="artistesLink"><span class="crochet">[</span> Artistes <span class="crochet">]</span></a>
 <a href="https://www.lyad.fr" target="_blank" title="Chat"><span class="crochet">[</span> CHAT <span class="crochet">]</span></a>
 </div>
 </div>
@@ -288,6 +288,13 @@ function hidePopup() {
 document.getElementById('feteMusiqueLink').addEventListener('click', function(event) {
     event.preventDefault();
     document.getElementById('pageContent').setAttribute('data', 'fete-musique.html');
+});
+</script>
+
+<script>
+document.getElementById('artistesLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('pageContent').setAttribute('data', 'artistes.html');
 });
 </script>
 

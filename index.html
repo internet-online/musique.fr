@@ -284,17 +284,24 @@ function hidePopup() {
 </script>
 
 
-<script>
-document.getElementById('feteMusiqueLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('pageContent').setAttribute('data', 'fete-musique.html');
-});
-</script>
+
 
 <script>
-document.getElementById('artistesLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('pageContent').setAttribute('data', 'artistes.html');
+document.addEventListener('DOMContentLoaded', function () {
+    const links = {
+        feteMusiqueLink: 'fete-musique.html',
+        artistesLink: 'artistes.html'
+    };
+
+    for (let id in links) {
+        const linkElement = document.getElementById(id);
+        if (linkElement) {
+            linkElement.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('pageContent').setAttribute('data', links[id]);
+            });
+        }
+    }
 });
 </script>
 

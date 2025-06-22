@@ -198,16 +198,16 @@
 </div>
 <div class="content">
 <div class="sidebar">
-<a href="#">Variété Française</a>
-<a href="#">Hip-Hop</a>
-<a href="#">Electro</a>
-<a href="#">Rock</a>
-<a href="#">Jazz</a>
-<a href="#">Blues</a>
-<a href="#">Reggae</a>
-<a href="#">Classique</a>
-<a href="#">Techno</a>
-<a href="#">Musiques du monde</a>
+<a href="#" id="varieteFrancaiseLink">Variété Française</a>
+<a href="#" id="hip-HopLink">Hip-Hop</a>
+<a href="#" id="electroLink">Electro</a>
+<a href="#" id="rockLink">Rock</a>
+<a href="#" id="jazzLink">Jazz</a>
+<a href="#" id="bluesLink">Blues</a>
+<a href="#" id="reggaeLink">Reggae</a>
+<a href="#" id="classiqueLink">Classique</a>
+<a href="#" id="technoLink">Techno</a>
+<a href="#" id="musiqueDuMondeLink">Musiques du monde</a>
 <hr style="width: 140px; margin-left: 0; border: 1px solid #000;">
 <a href="https://www.lyad.fr" target="_blank" title="rencontre"><i>Rencontre</i></a>
 </div>
@@ -289,8 +289,18 @@ function hidePopup() {
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const links = {
-        feteMusiqueLink: 'fete-musique.html',
-        artistesLink: 'artistes.html'
+        feteMusiqueLink: 'p-fete-musique.html',
+        artistesLink: 'p-artistes.html',
+        varieteFrancaiseLink: 'p-variete-francaise.html',
+        hip-HopLink: 'p-hip-hop.html',
+        electroLink: 'p-electro.html',
+        rockLink: 'p-rock.html',
+        jazzLink: 'p-jazz.html',
+        bluesLink: 'p-blues.html',
+        reggaeLink: 'p-raggae.html',
+        classiqueLink: 'p-classique.html',
+        technoLink: 'p-techno.html',
+        musiqueDuMondeLink: 'p-musique-du-monde.html'
     };
 
     for (let id in links) {

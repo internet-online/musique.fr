@@ -79,10 +79,19 @@
 
         .sidebar {
             width: 200px;
+            min-width: 200px; /* Empêche le rétrécissement */
             padding-right: 20px;
             z-index: 2;
             margin-top: 125px; /* Ajout pour descendre la navigation */
+            	height: 100%; /* Empêche le rétrécissement */
         }
+
+
+            	.cadre {
+		  flex: 1; /* Prend tout l'espace disponible verticalement */
+		  overflow: auto;
+		}
+
 
         .sidebar a {
             display: block;
@@ -143,22 +152,45 @@
   position: relative;
   top: 10px; /* Dï¿½calage vers le bas */
 }
+
+
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
     </style>
+      <meta charset="UTF-8">
 </head>
 <body>
 <div class="background-images">
-<img class="active" src="musique.fr_img-02.jpg"/>
-<img src="musique.fr_img-03.jpg"/>
-<img src="musique.fr_img-04.jpg"/>
-<img src="musique.fr_img-05.jpg"/>
-<img src="musique.fr_img-06.jpg"/>
+<img class="active" src="musique.fr_img-02.png"/>
+<img src="musique.fr_img-03.png"/>
+<img src="musique.fr_img-04.png"/>
+<img src="musique.fr_img-05.png"/>
+<img src="musique.fr_img-06.png"/>
+<img src="musique.fr_img-07.png"/>
 </div>
 <div class="header">
 <div class="logo">
-<img alt="Logo musique.fr" src="logo-musique.fr_v5.jpg"/>
+<a href="https://www.musique.fr"><img alt="musique.fr La musique que l'on aime" src="logo-musique.fr_v5.jpg" border="0" title="musique.fr"/></a>
 </div>
 <div class="nav">
-<a href="#"><span class="crochet">[</span> FÃªte de la musique <span class="crochet">]</span></a>
+<a href="#"><span class="crochet">[</span> F&ecirc;te de la musique <span class="crochet">]</span></a>
 <a href="#"><span class="crochet">[</span> Artistes <span class="crochet">]</span></a>
 <a href="https://www.lyad.fr" target="_blank" title="Chat"><span class="crochet">[</span> CHAT <span class="crochet">]</span></a>
 </div>
@@ -177,8 +209,23 @@
 <a href="#">Musiques du monde</a>
 </div>
 <div class="main" id="mainContent">
-<h2 id="sectionTitle">FÃªte de la musique Ã  Paris</h2>
-<p>Contenu initial affichÃª ici...</p>
+
+
+
+
+<div class="cadre" style="text-align: left;">
+    <object 
+        type="text/html" 
+        data="grenoble-01a.html"
+        style="width:100%; height:900px; border:none; text-align: left; display: block;">
+        <!-- Texte de fallback si le chargement échoue -->
+        <p>Désolé la page ne parvient pas à se charger ! R&eacute;essayez plus tard !</p>
+    </object>
+</div>
+
+
+
+
 </div>
 </div>
 <script>
@@ -189,7 +236,7 @@
         images[current].classList.remove('active');
         current = (current + 1) % images.length;
         images[current].classList.add('active');
-    }, 10000);
+    }, 15000);
     
   function closePopup() {
     document.getElementById('popupOverlay').style.display = 'none';

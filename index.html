@@ -191,7 +191,7 @@
 <a href="https://www.musique.fr"><img alt="musique.fr La musique que l'on aime" src="logo-musique.fr_v5.jpg" border="0" title="musique.fr"/></a>
 </div>
 <div class="nav">
-<a href="#"><span class="crochet">[</span> F&ecirc;te de la musique <span class="crochet">]</span></a>
+<a href="#" id="feteMusiqueLink"><span class="crochet">[</span> F&ecirc;te de la musique <span class="crochet">]</span></a>
 <a href="#"><span class="crochet">[</span> Artistes <span class="crochet">]</span></a>
 <a href="https://www.lyad.fr" target="_blank" title="Chat"><span class="crochet">[</span> CHAT <span class="crochet">]</span></a>
 </div>
@@ -214,12 +214,19 @@
 <div class="main" id="mainContent">
 
 
+<object 
+    id="pageContent"
+    type="text/html" 
+    data="page-centrale.html"
+    style="width:100%; height:900px; border:none; text-align: left; display: block;">
+</object>
+
 
 
 <div class="cadre" style="text-align: left;">
     <object 
         type="text/html" 
-        data="grenoble-01a.html"
+        data="page-centrale.html"
         style="width:100%; height:900px; border:none; text-align: left; display: block;">
         <!-- Texte de fallback si le chargement échoue -->
         <p>Désolé la page ne parvient pas à se charger ! R&eacute;essayez plus tard !</p>
@@ -278,6 +285,15 @@ function hidePopup() {
     overlay.style.display = 'none';
 }
 </script>
+
+
+<script>
+document.getElementById('feteMusiqueLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('pageContent').setAttribute('data', 'fete-musique.html');
+});
+</script>
+
 </body>
 
 </html>

@@ -52,6 +52,18 @@ h2 {
    Vari&eacute;t&eacute; Fran&ccedil;aise
   </h2>
   <div class="artist">
+  
+  <a href="p-aya-bio.html" onclick="chargerDansObject(event, this.href)">Aya Bio 55</a>
+
+<script>
+function chargerDansObject(event, url) {
+    event.preventDefault(); // Bloque l'ouverture normale du lien
+    // Cible l'<object> parent depuis l'index.html
+    window.parent.document.getElementById('pageContent').data = url;
+}
+</script>
+
+
    <!--<a href="#" id="ayabioLink">--//--><a href="p-aya-bio.html" target="_parent"><img alt="Aya Nakamura" width="220" border="0" src="Aya-v01.jpg"/></a><span style="font-size: 11px; font-style: italic;">repr&eacute;sentation artistique IA</span><br>
    <a href="https://totemproduction.fr/artistes/aya-nakamura/" target="_blank">
     Aya Nakamura
